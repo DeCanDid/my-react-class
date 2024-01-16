@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Navbar from './component1/Navbar';
+import Counter from './counter/Counter';
 
 const App = (() =>{
  return(
@@ -20,6 +21,7 @@ const App = (() =>{
     </a>
   </header>
   <Navbar />
+  {/* <Counter /> */}
 </div>
  )
 }) ;
