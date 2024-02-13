@@ -1,6 +1,14 @@
 import React, {useState} from "react";
 
 const Counter = () => {
+const [name, setName] = useState('Olawale');
+
+
+const changeName = () =>{
+    setName('Remi')
+    console.log(name);
+}
+
 const [num, setNum] = useState(0);
 
 const increment = () =>{
@@ -9,18 +17,31 @@ const increment = () =>{
 }
 
 const decrement = () =>{
-    // if (setNum  > 0) {
-    //         setNum(num - 1);
+    setNum(num - 1);
+
+    // if (setNum(num)  >= 0) {
+    //         setNum(num = 0);
             
     //     } else {
     //         alert('Counter can not be less than 0')
     //         setNum(num - 1);
             
     //     }
-    setNum(num - 1);
 
 }
 
+// const [myarray, setArray] = useState([]);
+const [myName, setmyName] = useState('Sammy');
+const [inpV, setVal] = useState('');
+
+const changeMyname = () =>{
+    setmyName(inpV)
+    console.log(inpV);
+}
+
+// const addValue = () =>{
+//     setArray(getValue)
+// }
     //styling Counter
     const myStyle = {
         holder: {
@@ -63,7 +84,16 @@ const decrement = () =>{
                 <aside style={myStyle.butHolder}>
                     <button style={myStyle.butt} onClick={decrement}>-</button>
                 </aside>
+
             </div>
+                <h4>{name}</h4>
+                <button onClick={changeName}>Change Name</button>
+                <div>
+                   <h2>{myName}</h2>
+                   <input type="text" onChange={(e)=>setVal(e.target.value)} />
+                   <button onClick={changeMyname}>ADD NAME</button>
+                    
+                </div>
         </>
      );
 }
